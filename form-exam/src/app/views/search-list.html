@@ -1,0 +1,28 @@
+<h1 class="title  text-success">{{titulo}}</h1>
+<!-- <form class="form-inline">
+    <input class="form-control mr-sm-2" #box type="text" placeholder="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0"  (click)="search(box.value)" type="submit">Search</button>
+  </form>  -->
+  <div class="container">
+        <a routerLink='/mercado'>Mercado Libre</a>
+    </div>
+
+<div class="card-columns">
+<div *ngFor="let res of results">
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src={{res.image_url}} alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">{{res.name}}</h4>
+          <p class="card-text">{{res.description}}</p>
+          <p class="card-text">Ingredients</p>
+          <div *ngFor="let ing of res.ingredients.hops">
+            {{ing.name}}
+          </div>
+          <p class="card-text">Tag Line: {{res.tagline}}</p>
+
+          <p class="card-text"><small class="text-muted">{{res.first_brewed}}</small></p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+</div>
+</div>

@@ -1,0 +1,24 @@
+<h1 class="title  text-success" >{{titulo}}</h1>
+<div class="container">
+    <a routerLink='/beer'>Beers API</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" #box type="text" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0"  (click)="getSearch(box.value)" type="submit">Search</button>
+      </form> 
+</div>
+
+<div class="card-columns">
+<div *ngFor="let res of results">
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src={{res.thumbnail}} alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">{{res.title}}</h4>
+          <p class="card-text">{{res.description}}</p>
+          <p class="card-text">Price: ${{res.price}}</p> 
+
+          <p class="card-text"><small class="text-muted">Condition: {{res.condition}}</small></p>
+          <a href="{{res.permalink}}" class="btn btn-primary">Link</a>
+        </div>
+      </div>
+</div>
+</div>
